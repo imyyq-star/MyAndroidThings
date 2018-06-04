@@ -2,21 +2,27 @@
 <manifest package="com.example.yyq.myandroidthings"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!--使用外设 IO-->
+    <uses-permission android:name="com.google.android.things.permission.USE_PERIPHERAL_IO"/>
+
     <application>
+        <!--声明使用的库-->
         <uses-library android:name="com.google.android.things"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".PWMActivity">
+            <!--测试用-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--发布用，这样子板子已启动就是你的应用-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.IOT_LAUNCHER"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.IOT_LAUNCHER"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 
